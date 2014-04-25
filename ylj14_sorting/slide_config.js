@@ -24,10 +24,9 @@ var SLIDE_CONFIG = {
   presenters: [{
     name: 'Declan Conlon',
     company: 'Networking &amp; Performance Engineer',
-    gplus: 'http://plus.google.com/1234567890',
     twitter: '@possiblywrong',
     www: 'http://possiblywrong.com',
-    github: 'http://github.com/you'
+    github: 'http://github.com/possiblywrong/ylj14'
   }/*, {
     name: 'Second Name',
     company: 'Job Title, Google',
