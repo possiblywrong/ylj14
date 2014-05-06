@@ -33,7 +33,6 @@ URL: https://code.google.com/p/io-2012-slides
   </slide>
 
   <slide class="title-slide segue nobackground">
-    <aside class="gdbar"><img src="images/lambda_jam.jpeg"></aside>
     <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
     <hgroup class="auto-fadein">
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
@@ -388,7 +387,7 @@ data Order t where
 
 val ordUnit = TrivO[Unit]()
 val ordNat8 = NatO(255)
-val ordInt32 = MapO(splitW º {x:Int => x+(-2147483648)}, ProdO(ordNat16, ordNat16))
+val ordInt32 = MapO(splitW º {x:Int => x+(-2147483648)}, ProdL(ordNat16, ordNat16))
 def splitW: Int => (Int,Int) = x => ((x>>16) & 65535,x & 65535)
 val ordChar8 = MapO({x: Char => x.toInt},ordNat8)
 val ordString8 = ListL(ordChar8)
@@ -477,9 +476,36 @@ def sortNat[A](z: NatO, xs: Stream[(Int,A)]): Stream[Stream[A]] = {
 
   <slide>
     <hgroup>
-      <h2>Perf</h2>
+      <h2>Scala vs Haskell - FIGHT!</h2>
     </hgroup>
     <article class="flexbox vcenter">
+      <ul class="build">
+        <li>Not much to fight about</li>
+        <li>Both more or less can encode the algorithm</li>
+        <li>Scala
+            <ul class="build">
+               <li>more verbose</li>
+               <li>typesystem needs more hand holding</li>
+               <li>lacks 'proper' tail-calls, polyfill with tramoplining &amp; Free</li>
+               <li>you have to explicitly manage lazyness</li>
+               <li>garbage creation/collection is a cost</li>
+               <li>friends don't let friends use Stream</li>
+            </ul>
+        </li>
+        <li>Haskell
+            <ul class="build">
+               <li>more natural encoding</li>
+               <li>still has garbage creation/coll cost</li>
+               <li>'probably' harder to encode dependent types as optimizations</li>
+            </ul>
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <article class="flexbox vcenter">
+      <span><img src="images/sort_scala_perf.png" style="width: auto; height: 500px;"></span>
     </article>
   </slide>
 
@@ -488,6 +514,12 @@ def sortNat[A](z: NatO, xs: Stream[(Int,A)]): Stream[Stream[A]] = {
       <h2>Advice</h2>
     </hgroup>
     <article class="flexbox vcenter">
+      <ul class="build">
+         <li>Read the paper</li>
+         <li>Don't worry about the proofs
+             <ul class="build"><li>(iff it has been peer reviewed)</li></ul></li>
+         <li>Read the paper again; you will miss vital things the first time</li>
+      </ul>
     </article>
   </slide>
 

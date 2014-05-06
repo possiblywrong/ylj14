@@ -305,7 +305,7 @@ slides > slide:not(.nobackground):before {
   position: absolute;
   bottom: 20px;
   left: 60px;
-  background: url(../../images/google_developers_icon_128.png) no-repeat 0 50%;
+  background: url(../../images/lambda_jam.jpeg) no-repeat 0 50%;
   -webkit-background-size: 30px 30px;
   -moz-background-size: 30px 30px;
   -o-background-size: 30px 30px;
@@ -499,9 +499,13 @@ ul li ul li:before {
   content: '-';
   font-weight: 600;
 }
+
+.nopoint {
+   list-style-type: none;
+}
 /* line 314, ../scss/default.scss */
 ul > li:before {
-  content: '\00B7';
+  /*content: '\00B7';*/
   margin-left: -1em;
   position: absolute;
   font-weight: 600;
@@ -1237,7 +1241,7 @@ article.smaller q:before, article.smaller q:after {
 
 /* line 826, ../scss/default.scss */
 .thank-you-slide {
-  background: #4387fd !important;
+  background: #535C6B !important;
   color: white;
 }
 /* line 830, ../scss/default.scss */

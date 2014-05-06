@@ -93,6 +93,8 @@ getWords path = do
 main = do
    ws <- getWords "/tmp/p"
    zws <- return $ zip ws ws
-   defaultMain [ bench "sdisc" $ whnf (sdisc ordString16) zws
-               , bench "sort"  $ whnf DL.sort ws ]
+   -- defaultMain [ bench "sdisc" $ whnf (sdisc ordString16) zws
+   --            , bench "sort"  $ whnf DL.sort ws ]
+   let as = ["AA","BCA","BA","BB","AAC","AB","BCA"]
+   print $ sdisc ordString8 $ zip as as
    print "Done"
