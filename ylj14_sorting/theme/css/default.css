@@ -1565,3 +1565,7 @@ aside.gdbar img {
 .anim {
    font-size: 15px;
 }
+
+.smalltext {
+   font-size: 0.8em;
+}
